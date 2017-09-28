@@ -69,7 +69,7 @@ var INPUT_AXIS_LABELS = {
 	CH4: 'Methane emissions (TgCH4/yr)',
 	SO2: 'Aerosol emissions (TgSO2/yr)',
 	TSI: 'Solar energy (W/m2)',
-	volc: '',
+	volc: 'Volcanic emissions (per year)',
 	alb: '',
 };
 
@@ -99,22 +99,22 @@ var OUTPUT_CHART_INFOS = [
 	},
 	{
 		id: 'chart-at-up-lo',
-		name: 'AT, UP & LO Inventories',
+		name: 'Carbon Inventories',
 		lines: 3,
 		legend: {
-			'red': 'AT',
-			'blue': 'UP',
-			'green': 'LO'
+			'red': 'Atmosphere',
+			'blue': 'Upper Ocean',
+			'green': 'Deep Ocean'
 		}
 	},
 	{
 		id: 'chart-veg-soil-npp',
-		name: 'Veg, Soil & NPP Inventories',
+		name: 'Land Carbon Inventories',
 		lines: 3,
 		legend: {
 			'red': 'Vegetation Carbon',
 			'blue': 'Soil Carbon',
-			'green': 'NPP'
+			'green': 'Net Primary Productions'
 		}
 	},
 	{
@@ -127,11 +127,11 @@ var OUTPUT_CHART_INFOS = [
 		name: '60W Light Bulbs',
 		lines: 5,
 		legend: {
-			'red': 'bulbs_in_lw',
-			'blue': 'bulbs_in_sw',
-			'green': 'bulbs_out_lw',
-			'orange': 'bulbs_out_sw',
-			'black': 'bulbs_net'
+			'red': 'Longwave IN',
+			'blue': 'Shortwave IN',
+			'green': 'Longwave OUT',
+			'orange': 'Shortwave OUT',
+			'black': 'Net'
 		}
 	},
 	{

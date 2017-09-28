@@ -41,7 +41,6 @@ var getUninterpolatedSimsetup = function(scenarioId) {
 			rcphi[i] = interp1(XLS_RCPH[0], XLS_RCPH[i], years);
 		}
 	}
-
 	switch (scenarioId) {
 		case 1:
 			emissions.CH4 = rcphi[54];

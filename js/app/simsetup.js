@@ -1,9 +1,14 @@
 /**
  * Contains setup function that fetches inputs for the default scenarios.
  */
-
+/*
 var getDefaultVolc = function() {
 	var ret = arrcpy(TAU_LINE);
+	return ret;
+};
+*/
+var getDefaultVolc = function() {
+	var ret = arrcpy(ANNUAL_VOLC);
 	return ret;
 };
 
@@ -38,6 +43,7 @@ var simulationSetup = function(scenarioId) {
 		SO2: null,
 		volc: null,
 	};
+console.log('emissions.volc', emissions.volc);
 	// TSI
 	var TSI = [ 0 ];
 	// set to nanmean(TSI) - mean of all non-Nan elements inside TSI
@@ -75,8 +81,8 @@ var simulationSetup = function(scenarioId) {
 
 		// Volcanic stuff precalculated by Matlab and plugged into TAU_LINE constant (defined in data.js)
 		// may need to be altered in the future depending on specifics of custom data input
-		emissions.volc = getDefaultVolc();
-
+		var annualEmissions = getDefaultVolc();
+		emissions.volc = interp1(annualEmissions[0], annualEmissions[1], years);
 		// SOLAR
 		// load 'TSI_WLS_ann_1610_2008.xls'
 		TSI = getDefaultTSI(years);

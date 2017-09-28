@@ -313,7 +313,6 @@ onmessage = function(e) {
 	var customScenarioStart = data.customScenarioStart;
 	// set scenarioId
 	scenarioId = data.id;
-
 	var setup;
 	// set progress percentage to zero
 	progressPercentage = 0;
@@ -339,12 +338,14 @@ onmessage = function(e) {
 		this.XLS_RCPH_ROWS = data.rcphr;
 		this.XLS_RCPH_COLS = data.rcphc;
 		this.TAU_LINE = data.tline;
+		this.ANNUAL_VOLC = data.annVolc;
 		this.XLS_TSI = data.tsi;
 
 		// import simsetup.js
 		importScripts('simsetup.js');
 
 		setup = simulationSetup(scenarioId);
+console.log('setup',setup)
 	} else {
 		// custom scenario - directly copy from data
 		setup = data.customData;
@@ -356,7 +357,6 @@ onmessage = function(e) {
 	this.mTSI = setup.mTSI;
 	this.alb = setup.alb;
 	this.years = setup.years;
-
 	// wait a bit before running
 	setTimeout(function() {
 		simulate();

@@ -473,6 +473,7 @@ cmApp.controller('mainCtrl', ['$scope', '$rootScope', '$timeout', '$interval',
 				rcphr: XLS_RCPH_ROWS,
 				rcphc: XLS_RCPH_COLS,
 				tline: TAU_LINE,
+				annVolc: ANNUAL_VOLC,
 				tsi: XLS_TSI
 			};
 			if ($scope.activeScenario.id >= CUSTOM_SCENARIO_ID_START) {
@@ -796,7 +797,8 @@ cmApp.controller('mainCtrl', ['$scope', '$rootScope', '$timeout', '$interval',
 			lines.push('CH4,' + setupData.emissions.CH4.toString());
 			lines.push('CO2,' + setupData.emissions.CO2.toString());
 			lines.push('SO2,' + setupData.emissions.SO2.toString());
-			lines.push('volc,' + setupData.emissions.volc.toString());
+			lines.push('volc,' + setupData.emissions.volc[1].toString());
+//			lines.push('volc,' + setupData.emissions.volc.toString());
 			lines.push('TSI,' + setupData.TSI.toString());
 			lines.push('mTSI,' + setupData.mTSI);
 			lines.push('alb,' + setupData.alb.toString());

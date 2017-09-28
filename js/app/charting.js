@@ -32,6 +32,7 @@ var getChartOptions = function(units) {
 		height: height,
 		showPoint: false,
 		chartPadding: {
+			left: 30,
 			right: 30 // so the labels on the far right don't get cut off
 		},
 		lineSmooth: Chartist.Interpolation.simple({
@@ -53,7 +54,7 @@ var getChartOptions = function(units) {
 					axisClass: 'ct-axis-title',
 					offset: {
 						x: 0,
-						y: 12
+						y: 17
 					},
 					textAnchor: 'middle',
 					flipTitle: true
@@ -124,6 +125,8 @@ var plotData = function(chartId, years, data, popup, units) {
  * @TODO make this 'empty' chart truly empty, and prettier
  */
 var plotEmptyChart = function(chartId, units) {
+
+console.log(units);
 	var options = getChartOptions(units);
 	var plot = {
 		labels: [ 0 ],
