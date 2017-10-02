@@ -43,7 +43,6 @@ var simulationSetup = function(scenarioId) {
 		SO2: null,
 		volc: null,
 	};
-console.log('emissions.volc', emissions.volc);
 	// TSI
 	var TSI = [ 0 ];
 	// set to nanmean(TSI) - mean of all non-Nan elements inside TSI
@@ -87,10 +86,10 @@ console.log('emissions.volc', emissions.volc);
 		// load 'TSI_WLS_ann_1610_2008.xls'
 		TSI = getDefaultTSI(years);
 		// mTSI is equal to the mean of all the non-NaN elements of TSI
-		mTSI = nanmean(TSI);
+		mTSI = nonZeroMean(TSI);
 		// if TSI has NaN elements, set those to equal mTSI
 		for (var i = 0; i < TSI.length; i++) {
-			if (isNaN(TSI[i])) {
+			if (isNaN(TSI[i]) || TSI[i] == 0) {
 				TSI[i] = mTSI;
 			}
 		}

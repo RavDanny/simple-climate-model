@@ -30,9 +30,9 @@ var getUninterpolatedSimsetup = function(scenarioId) {
 	if (scenarioId <= 4 || scenarioId >= 10) {
 		emissions.volc = getDefaultVolc();
 		TSI = getDefaultTSI(years);
-		mTSI = nanmean(TSI);
+		mTSI = nonZeroMean(TSI);
 		for (var i = 0; i < TSI.length; i++) {
-			if (isNaN(TSI[i])) {
+			if (isNaN(TSI[i]) || TSI[i] == 0) {
 				TSI[i] = mTSI;
 			}
 		}

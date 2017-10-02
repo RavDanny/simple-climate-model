@@ -127,6 +127,20 @@ var nanmean = function(array) {
     return (total / nums);
 };
 
+// mean ignoring non-zero values
+var nonZeroMean = function(array) {
+    var total = 0;
+    var nums = 0;
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] != 0 && !isNaN(array[i])) {
+            total += array[i];
+            nums++;
+        }
+    }
+    return (total / nums);
+};
+
+
 // generates a random number
 // right now this function just generates 4 random numbers between 0 and 3 and chooses the smallest one
 // positive or negative is then randomly generated and tacked on before returning
