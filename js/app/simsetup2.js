@@ -32,7 +32,7 @@ var getUninterpolatedSimsetup = function(scenarioId) {
 		TSI = getDefaultTSI(years);
 		mTSI = nonZeroMean(TSI);
 		for (var i = 0; i < TSI.length; i++) {
-			if (isNaN(TSI[i]) || TSI[i] == 0) {
+			if (isNaN(TSI[i])) {
 				TSI[i] = mTSI;
 			}
 		}

@@ -81,9 +81,8 @@ var interp1 = function(x, y, xi) {
     var yi = [];
     for (var i = 0; i < xi.length; i++) {
     	if (xi[i] > x[x.length - 1] || xi[i] < x[0]) {
-// Danny - changed for volcanic emissions
-//    		yi[i] = Number.NaN;
-    		yi[i] = 0;
+    		yi[i] = Number.NaN;
+//    		yi[i] = 0;
     	} else {
     		var loc = binarySearch(x, xi[i]); // binary search
     		if (loc < -1) {

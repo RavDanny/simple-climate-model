@@ -345,7 +345,6 @@ onmessage = function(e) {
 		importScripts('simsetup.js');
 
 		setup = simulationSetup(scenarioId);
-console.log('setup',setup)
 	} else {
 		// custom scenario - directly copy from data
 		setup = data.customData;

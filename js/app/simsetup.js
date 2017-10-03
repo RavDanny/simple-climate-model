@@ -89,7 +89,7 @@ var simulationSetup = function(scenarioId) {
 		mTSI = nonZeroMean(TSI);
 		// if TSI has NaN elements, set those to equal mTSI
 		for (var i = 0; i < TSI.length; i++) {
-			if (isNaN(TSI[i]) || TSI[i] == 0) {
+			if (isNaN(TSI[i])) {
 				TSI[i] = mTSI;
 			}
 		}
